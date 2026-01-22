@@ -15,11 +15,6 @@ main {
 
 aside {
   width: 20rem;
-  margin: 1rem;
-  border: 1px solid rgb(0 0 0 / 0.2);
-  padding: 1rem;
-  background-color: #eee;
-  color: #333;
   text-align: center;
   position: relative;
 }
@@ -31,7 +26,17 @@ aside img {
 
 aside h2 {
   position: absolute;
-  top: 60px;
+  top: 50px;
+  /* Adjust this up/down as needed */
+  left: 40px;
+  /* Adjust this left/right to center over image */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Semi-transparent dark bg for contrast */
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 main img {
@@ -78,7 +83,7 @@ main h1 {
 /* Class Selectors */
 .box {
   margin: 1rem;
-  border: 1px solid rgba(0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1rem;
   background-color: #eee;
   color: #000;
