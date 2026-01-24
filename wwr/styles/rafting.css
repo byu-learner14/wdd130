@@ -2,7 +2,7 @@
   --primary: #1a5c38;
   /* deep forest green */
   --secondary: #e89e3e;
-  /* warm golden orange – defined but not used now */
+  /* warm golden orange – now used on hover */
   --accent: #2c4a6e;
   /* dark slate blue-gray */
   --light: #f8f5f0;
@@ -64,7 +64,8 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--accent);
+  color: var(--secondary);
+  /* Using --secondary here = all variables now used */
   text-decoration: underline;
 }
 
@@ -131,7 +132,6 @@ nav a:hover {
 
 h2 {
   color: var(--primary);
-  /* Changed to --primary for high contrast on white (~7.98:1) */
   font-family: var(--heading-font);
   margin-bottom: 1.2rem;
   font-size: 2.2rem;
