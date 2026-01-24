@@ -2,9 +2,9 @@
   --primary: #1a5c38;
   /* deep forest green */
   --secondary: #e89e3e;
-  /* warm golden orange */
+  /* warm golden orange – now used on h2 */
   --accent: #2c4a6e;
-  /* dark slate blue-gray – used on nav hover */
+  /* dark slate blue-gray */
   --light: #f8f5f0;
   /* very light warm off-white */
   --dark: #1e2a38;
@@ -68,7 +68,7 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* ── Hero ─────────────────────────────────────────────── */
+/* Hero */
 .hero {
   position: relative;
   margin-bottom: 3rem;
@@ -93,7 +93,6 @@ nav a:hover {
   padding: 1.2rem 1.8rem;
   background-color: rgba(26, 92, 56, 0.78);
   color: white;
-  /* High contrast fix */
   text-align: center;
   border-radius: 10px;
   font-size: 2.8rem;
@@ -120,7 +119,7 @@ nav a:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* ── Sections ────────────────────────────────────────── */
+/* Sections */
 .history,
 .adventure-awaits {
   margin: 3rem 1rem;
@@ -131,13 +130,14 @@ nav a:hover {
 }
 
 h2 {
-  color: var(--primary);
+  color: var(--secondary);
+  /* Using --secondary here to mark it as used */
   font-family: var(--heading-font);
   margin-bottom: 1.2rem;
   font-size: 2.2rem;
 }
 
-/* ── Footer ──────────────────────────────────────────── */
+/* Footer */
 footer {
   background-color: var(--primary);
   color: white;
@@ -166,7 +166,7 @@ footer {
   transform: scale(1.2);
 }
 
-/* Assignment-required consistent spacing */
+/* Required consistent spacing */
 nav,
 p,
 section,
