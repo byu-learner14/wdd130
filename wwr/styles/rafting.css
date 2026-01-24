@@ -1,10 +1,10 @@
 :root {
   --primary: #1a5c38;
-  /* deep forest green – matches the adventurous vibe */
+  /* deep forest green */
   --secondary: #e89e3e;
-  /* warm golden orange – energetic accent */
+  /* warm golden orange */
   --accent: #2c4a6e;
-  /* dark slate blue-gray */
+  /* dark slate blue-gray – used on nav hover */
   --light: #f8f5f0;
   /* very light warm off-white */
   --dark: #1e2a38;
@@ -47,7 +47,6 @@ header {
 
 .logo {
   height: 90px;
-  /* Adjusted slightly – your logo looks bold, give it room */
   width: auto;
 }
 
@@ -65,7 +64,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--secondary);
+  color: var(--accent);
   text-decoration: underline;
 }
 
@@ -81,7 +80,6 @@ nav a:hover {
   height: auto;
   object-fit: cover;
   max-height: 550px;
-  /* Prevents overly tall hero on wide screens */
 }
 
 .hero h1 {
@@ -94,8 +92,8 @@ nav a:hover {
   max-width: 820px;
   padding: 1.2rem 1.8rem;
   background-color: rgba(26, 92, 56, 0.78);
-  /* semi-transparent green overlay */
   color: white;
+  /* High contrast fix */
   text-align: center;
   border-radius: 10px;
   font-size: 2.8rem;
@@ -116,7 +114,6 @@ nav a:hover {
 .hero article img {
   float: right;
   width: 180px;
-  /* Slightly larger for your smiling rafter shot */
   margin-left: 1.8rem;
   margin-bottom: 0.8rem;
   border-radius: 10px;
@@ -162,10 +159,18 @@ footer {
   width: 40px;
   height: 40px;
   filter: brightness(0) invert(1);
-  /* Ensures white icons on dark bg */
   transition: transform 0.2s ease;
 }
 
 .socialmedia img:hover {
   transform: scale(1.2);
+}
+
+/* Assignment-required consistent spacing */
+nav,
+p,
+section,
+article {
+  margin: 16px;
+  padding: 8px;
 }
