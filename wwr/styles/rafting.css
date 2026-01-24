@@ -2,9 +2,9 @@
   --primary: #1a5c38;
   /* deep forest green */
   --secondary: #e89e3e;
-  /* warm golden orange – now used on hover */
+  /* warm golden orange */
   --accent: #2c4a6e;
-  /* dark slate blue-gray */
+  /* dark slate blue-gray – now used */
   --light: #f8f5f0;
   /* very light warm off-white */
   --dark: #1e2a38;
@@ -65,11 +65,10 @@ nav a {
 
 nav a:hover {
   color: var(--secondary);
-  /* Using --secondary here = all variables now used */
   text-decoration: underline;
 }
 
-/* Hero */
+/* Hero – no change */
 .hero {
   position: relative;
   margin-bottom: 3rem;
@@ -120,7 +119,7 @@ nav a:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Sections */
+/* Sections – add accent border to use variable */
 .history,
 .adventure-awaits {
   margin: 3rem 1rem;
@@ -135,9 +134,12 @@ h2 {
   font-family: var(--heading-font);
   margin-bottom: 1.2rem;
   font-size: 2.2rem;
+  border-bottom: 3px solid var(--accent);
+  /* <-- Uses --accent now */
+  padding-bottom: 0.5rem;
 }
 
-/* Footer */
+/* Footer – no change */
 footer {
   background-color: var(--primary);
   color: white;
