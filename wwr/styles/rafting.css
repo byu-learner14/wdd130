@@ -77,85 +77,92 @@ header nav a:hover {
   text-decoration: underline;
 }
 
-/* ── Hero / Intro ────────────────────────────────────────── */
+/* ── Hero (required for audit) ───────────────────────────── */
 .hero {
   position: relative;
-  background-color: white;
+  /* REQUIRED */
   margin: 2rem 0;
-  padding: 2.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  border-radius: 8px;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 500px;
 }
 
 .hero h1 {
-  text-align: center;
-  color: var(--primary);
-  font-family: var(--heading-font);
-  font-size: 3.2rem;
-  margin: 0 0 1.8rem;
-  position: relative;
-}
-
-/* Fake angled borders with pseudo-elements */
-.hero::before,
-.hero::after {
-  content: "";
   position: absolute;
-  width: 120px;
-  height: 120px;
-  background: transparent;
-  border: 8px solid var(--secondary);
-  z-index: -1;
+  /* REQUIRED */
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 1rem 2rem;
+  background-color: rgba(26, 92, 56, 0.78);
+  color: white;
+  border-radius: 10px;
+  font-size: 2.8rem;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 2;
 }
 
-.hero::before {
-  top: -20px;
-  left: -20px;
-  border-right: none;
-  border-bottom: none;
+.hero article {
+  position: absolute;
+  /* REQUIRED */
+  bottom: 40px;
+  left: 5%;
+  right: 5%;
+  background-color: rgba(248, 245, 240, 0.92);
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 2;
 }
 
-.hero::after {
-  bottom: -20px;
-  right: -20px;
-  border-left: none;
-  border-top: none;
+.hero article img {
+  float: right;
+  /* REQUIRED */
+  width: 180px;
+  margin: 0 0 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.intro-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-}
-
-.intro-content p {
-  flex: 3;
+.hero article p {
+  margin: 0;
   font-size: 1.1rem;
 }
 
-.intro-content img {
-  flex: 1;
-  max-width: 240px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  order: 2;
-}
-
-@media (max-width: 700px) {
-  .intro-content {
-    flex-direction: column;
+/* Mobile adjustments (optional but recommended) */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+    top: 20px;
+    padding: 0.8rem 1.2rem;
   }
 
-  .intro-content img {
-    order: 0;
-    max-width: 280px;
+  .hero article {
+    position: relative;
+    bottom: auto;
+    margin-top: -100px;
+    left: 5%;
+    right: 5%;
+  }
+
+  .hero article img {
+    float: none;
+    display: block;
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 240px;
   }
 }
 
-/* ── History ─────────────────────────────────────────────── */
-.history,
-.adventure-awaits {
+/* ── Sections ────────────────────────────────────────────── */
+section {
   margin: 3rem 1rem;
   padding: 2rem;
   background-color: white;
@@ -172,46 +179,7 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
-.history-content {
-  display: grid;
-  grid-template-columns: 1fr 280px 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-
-.history-image {
-  margin: 0;
-}
-
-.history-image img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-}
-
-.history-image figcaption {
-  text-align: center;
-  font-style: italic;
-  color: #555;
-  margin-top: 0.6rem;
-  font-size: 0.95rem;
-}
-
-@media (max-width: 800px) {
-  .history-content {
-    grid-template-columns: 1fr;
-  }
-
-  .history-image {
-    order: -1;
-  }
-}
-
-/* ── Adventure Gallery ───────────────────────────────────── */
-.adventure-awaits {
-  text-align: center;
-}
-
+/* Gallery in second section */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -235,6 +203,7 @@ h2 {
   margin-top: 0.8rem;
   font-weight: 500;
   color: var(--primary);
+  text-align: center;
 }
 
 /* ── Footer ──────────────────────────────────────────────── */
@@ -250,33 +219,22 @@ footer p {
   margin-bottom: 1.2rem;
 }
 
-.socialmedia {
+footer nav.socialmedia {
   display: flex;
-  justify-content: center;
-  /* Change to flex-end if you want them far right */
+  justify-content: flex-end;
+  /* Or center if preferred */
   gap: 1.8rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.socialmedia a {
-  margin: 0;
-  text-decoration: none;
-}
-
-.socialmedia img {
+footer nav.socialmedia img {
   width: 42px;
   height: 42px;
   filter: brightness(0) invert(1);
   transition: transform 0.25s;
 }
 
-.socialmedia img:hover {
+footer nav.socialmedia img:hover {
   transform: scale(1.25);
-}
-
-nav,
-p,
-section,
-article {
-  margin: 0;
-  padding: 0;
 }
