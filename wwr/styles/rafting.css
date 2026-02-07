@@ -241,19 +241,6 @@ footer nav.socialmedia img:hover {
 
 /* ── Contact Page Additions ──────────────────────────────────────────────── */
 
-/* Slight hero override for Contact Us page (optional – makes title pop more) */
-.hero h1 {
-  font-size: 3.2rem;
-  padding: 1.2rem 2.5rem;
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.4rem;
-    padding: 1rem 1.8rem;
-  }
-}
-
 /* Contact Info Section */
 .contact-info {
   background-color: white;
@@ -415,7 +402,8 @@ footer nav.socialmedia img:hover {
   width: 100%;
   padding: 1.1rem;
   background-color: var(--secondary);
-  color: white;
+  color: var(--dark);
+  /* FIXED: Changed from white to dark for WCAG AA contrast pass */
   border: none;
   border-radius: 8px;
   font-size: 1.25rem;
